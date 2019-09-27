@@ -12,6 +12,7 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
+		<link rel="stylesheet" href="styles.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -26,10 +27,109 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h3>Bracket vs. Dot Notation</h3>
-					<h4>Hannah Hudson</h4>
+					<h2>Bracket vs. Dot Notation</h2>
+					<h3>Hannah Hudson</h3>
 				</section>
-				<section></section>
+				<section>
+					<h2>How are they similar?</h2>
+					<p>They are the two ways we can access Javascript Object properties</p>
+					<pre><code>
+	let hannah = {
+		lastName: "Hudson",
+		birthday: "September 23rd"
+	};
+
+	console.log(hannah.lastName);
+
+	prints Hudson
+
+	console.log(hannah["lastName"]);
+
+	prints Hudson
+				</code></pre>
+				</section>
+				<section>
+					<h2>Advantages to Dots</h2>
+					<iframe src="https://giphy.com/embed/4T1Kcvu5DBfsoiCM1r" width="480" height="342" frameBorder="0" class="giphy-embed"
+						></iframe>
+				</section>
+
+				<section>
+					<h2>Advantages to Dots</h2>
+					<ul>
+						<li>Popular option is that its easier to read</li>
+						<li>Fewer characters, might save some time</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Disadvantages to Dots</h2>
+					<div>We can't do stuff like this:</div>
+					<pre><code>
+	let importantDates = {
+		711: "My cat's birthday",
+		928: "My wedding anniversary",
+	};
+
+	console.log(importantDates.711);
+					</code></pre>
+					<div class="error">Uncaught SyntaxError: missing ) after argument list</div>
+				</section>
+
+					<section>
+						<h2>Disadvantages to Dots</h2>
+						<div>We can't access properties when a key contains a space</div>
+						<div class="error">add example</div>
+					</section>
+
+				<section>
+					<h2>Disadvantages to Dots</h2>
+					<div>We can't access arrays</div>
+					<div class="error">add example</div>
+				</section>
+
+				<section>
+					<h2>Disadvantages to Dots</h2>
+					<div>We can't loop or map over Object keys</div>
+					<div class="error">add example</div>
+				</section>
+
+				<section>
+					<h2>Advantages to Brackets</h2>
+				<iframe src="https://giphy.com/embed/dUgcnG6hPF46Q" width="480" height="270" frameBorder="0" class="giphy-embed"
+					allowFullScreen></iframe>
+				</section>
+
+				<section>
+					<h2>Advantages to Brackets</h2>
+					<li>Can access data without knowing what it is beforehand (think of APIs!)</li>
+				</section>
+
+				<section>
+					<h2>Advantages to Brackets</h2>
+					<li>Can access number keys, keys with spaces, hypens and more!</li>
+				</section>
+
+				<section>
+					<h2>Advantages to Brackets</h2>
+					<div>We can use variables to access Object properties</div>
+				</section>
+
+				<section>
+					<h2>So how do we know which one to use?</h2>
+					<iframe src="https://giphy.com/embed/blPpTGDhn6hEI" width="480" height="300" frameBorder="0" class="giphy-embed"
+						></iframe>
+				</section>
+
+				<section>
+					<div>According to Airbnb's styleguide</div>
+					<img src="airbnb.png" alt="">
+				</section>
+
+				<section>
+					<div>I tend to agree with AirBnb, and find myself defaulting to dot notation unless I have a reason to use brackets.</div>
+				</section>
+
 			</div>
 		</div>
 
