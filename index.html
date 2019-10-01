@@ -34,9 +34,10 @@
 					<h2>How are they similar?</h2>
 					<p>They are the two ways we can access Javascript Object properties</p>
 					<pre><code>
-	let hannah = {
+	let myInformation = {
+		firstName: "Hannah"
 		lastName: "Hudson",
-		birthday: "September 23rd"
+		birthday: "September 23rd",
 	};
 
 	console.log(hannah.lastName);
@@ -49,8 +50,13 @@
 				</code></pre>
 				</section>
 				<section>
+					<h2>Which syntax is your favorite?</h2>
+					<iframe src="https://giphy.com/embed/VbnUQpnihPSIgIXuZv" width="384" height="480" frameBorder="0" class="giphy-embed"
+						></iframe>
+				</section>
+				<section>
 					<h2>Advantages to Dots</h2>
-					<iframe src="https://giphy.com/embed/4T1Kcvu5DBfsoiCM1r" width="480" height="342" frameBorder="0" class="giphy-embed"
+					<iframe src="https://giphy.com/embed/b2tJVvyNyHAME" width="480" height="269" frameBorder="0" class="giphy-embed"
 						></iframe>
 				</section>
 
@@ -79,19 +85,59 @@
 					<section>
 						<h2>Disadvantages to Dots</h2>
 						<div>We can't access properties when a key contains a space</div>
-						<div class="error">add example</div>
+<pre><code>
+	let importantDates = {
+	  "My cat's birthday": 711,
+	  "My wedding anniversary": 928,
+	};
+
+	console.log(importantDates."My cat's birthday");
+					</code></pre>
+						<div class="error">Uncaught SyntaxError: Unexpected string</div>
 					</section>
 
 				<section>
 					<h2>Disadvantages to Dots</h2>
 					<div>We can't access arrays</div>
-					<div class="error">add example</div>
+					<pre><code>
+	const favBakedGoods = ['tarts', 'pies', 'cakes'];
+
+	console.log(favBakedGoods.0);
+					</code></pre>
+					<div class="error"><div class="error">Uncaught SyntaxError: missing ) after argument list</div></div>
 				</section>
 
 				<section>
 					<h2>Disadvantages to Dots</h2>
 					<div>We can't loop or map over Object keys</div>
-					<div class="error">add example</div>
+					<div class="error">
+<pre><code>
+	let myFamily = {
+		husband: "Erik",
+		cat: "Clementine",
+	}
+
+	for (let key in myFamily) {
+	  let value = myFamily.key;
+	  console.log("My", key, "'s name is ", value);
+	}
+
+	prints
+	My husband 's name is undefined
+	My cat 's name is undefined
+
+</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h2>Why is dot notation so limited?</h2>
+					<div>
+						According to MDN, the property (value) must be a valid JavaScript identifier (must start with a letter, underscore (_), or dollar sign ($).
+						<br/><a target="_blank"
+							href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">MDN Property
+							Accesors</a>
+					</div>
 				</section>
 
 				<section>
@@ -103,16 +149,71 @@
 				<section>
 					<h2>Advantages to Brackets</h2>
 					<li>Can access data without knowing what it is beforehand (think of APIs!)</li>
+					<pre><code>
+		let mysteryData = response.json();
+
+		for (let key in mysteryData) {
+		 console.log(mysteryData[key])
+		}
+
+		print 
+			"value 1"
+			"value two"
+			"other mystery value"
+			"more"
+					</code></pre>
 				</section>
 
 				<section>
 					<h2>Advantages to Brackets</h2>
-					<li>Can access number keys, keys with spaces, hypens and more!</li>
+					<li>Can access number keys, keys with spaces, hyphens and more!</li>
+					<pre><code>
+	let importantDates = {
+		"My cat's birthday": 711,
+		"My wedding anniversary": 928,
+	};
+
+	console.log(importantDates["My cat's birthday"]);
+
+	prints 711
+										</code></pre>
+							
 				</section>
 
 				<section>
 					<h2>Advantages to Brackets</h2>
 					<div>We can use variables to access Object properties</div>
+	<pre><code>
+		const today = 'wednesday';
+		
+		const weather = {
+		 monday: 'sunny',
+		 tuesday: 'rainy',
+		 wednesday: 'sunny',
+		};
+		
+		console.log(weather[today]);
+
+	</code></pre>
+	<div>Notice how today isn't in quotes? This is how we specify that it is a variable instead of a key.
+</div>
+				</section>
+
+				<section>
+					<h3>What would happen if we tried the same thing but used dot notation?</h3>
+	<pre><code>
+		const today = 'wednesday';
+		
+		const weather = {
+			monday: 'sunny',
+			tuesday: 'rainy',
+			wednesday: 'sunny',
+		};
+		
+		console.log(weather.today);
+	
+		prints undefined
+		</code></pre>
 				</section>
 
 				<section>
@@ -127,7 +228,10 @@
 				</section>
 
 				<section>
+				<iframe src="https://giphy.com/embed/3oKIPnAiaMCws8nOsE" width="257" height="280" frameBorder="0" class="giphy-embed"
+					></iframe>
 					<div>I tend to agree with AirBnb, and find myself defaulting to dot notation unless I have a reason to use brackets.</div>
+					<div>Basically, use dot notation unless you're doing something complicated!</div>
 				</section>
 
 			</div>
